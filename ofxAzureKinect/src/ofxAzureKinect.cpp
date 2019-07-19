@@ -27,6 +27,8 @@ bool ofxAzureKinect::init(k4a_image_format_t color_format, k4a_color_resolution_
 	config.color_resolution = color_resolution;
 	config.depth_mode = depth_mode;
 
+	ofLog(OF_LOG_NOTICE, "k4a device succesfully configured");
+
 	return true;
 }
 
@@ -47,6 +49,7 @@ bool ofxAzureKinect::open(int deviceIndex)
 		return false;
 	}
 
+	ofLog(OF_LOG_NOTICE, "k4a device succesfully opened");
 	return false;
 }
 
@@ -54,16 +57,20 @@ bool ofxAzureKinect::close()
 {
 	k4a_device_stop_cameras(device);
 	k4a_device_close(device);
+
+	ofLog(OF_LOG_NOTICE, "k4a device succesfully closed");
+
+	return true;
 }
 
-string ofxAzureKinect::getSerial() const
-{
-	k4a_device_get_serialnum(device, NULL, &serial_number_length);
-
-	// Allocate memory for the serial, then acquire it
-	char *serial = (char*)(malloc(serial_number_length));
-	k4a_device_get_serialnum(device, serial, &serial_number_length);
-	ofLog(OF_LOG_NOTICE, "Opened device: %s\n", serial);
-
-	return serial;
-}
+//string ofxAzureKinect::getSerial() const
+//{
+//	k4a_device_get_serialnum(device, NULL, &serial_number_length);
+//
+//	// Allocate memory for the serial, then acquire it
+//	char *serial = (char*)(malloc(serial_number_length));
+//	k4a_device_get_serialnum(device, serial, &serial_number_length);
+//	ofLog(OF_LOG_NOTICE, "Opened device: %s\n", serial);
+//
+//	return serial;
+//}
