@@ -190,7 +190,7 @@ C:\Users\DDD\Documents\of_v0.10.1_vs2017_release\addons\ofxGui\src;%(AdditionalI
     <ClCompile Include="..\..\..\..\Documents\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSlider.cpp" />
     <ClCompile Include="..\..\..\..\Documents\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSliderGroup.cpp" />
     <ClCompile Include="..\..\..\..\Documents\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.cpp" />
-    <ClCompile Include="ofxAzureKinect.cpp" />
+    <ClCompile Include="src\ofxAzureKinect.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
   </ItemGroup>
@@ -206,7 +206,7 @@ C:\Users\DDD\Documents\of_v0.10.1_vs2017_release\addons\ofxGui\src;%(AdditionalI
     <ClInclude Include="..\..\..\..\Documents\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSlider.h" />
     <ClInclude Include="..\..\..\..\Documents\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSliderGroup.h" />
     <ClInclude Include="..\..\..\..\Documents\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.h" />
-    <ClInclude Include="ofxAzureKinect.h" />
+    <ClInclude Include="src\ofxAzureKinect.h" />
     <ClInclude Include="src\ofApp.h" />
   </ItemGroup>
   <ItemGroup>

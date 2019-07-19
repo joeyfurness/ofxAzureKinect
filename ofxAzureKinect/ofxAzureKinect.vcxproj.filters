@@ -37,7 +37,7 @@
     <ClCompile Include="src\ofApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="ofxAzureKinect.cpp">
+    <ClCompile Include="src\ofxAzureKinect.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,7 +92,7 @@
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="ofxAzureKinect.h">
+    <ClInclude Include="src\ofxAzureKinect.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
