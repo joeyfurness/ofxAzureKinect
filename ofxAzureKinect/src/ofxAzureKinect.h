@@ -23,22 +23,6 @@ public:
 
 	 bool close();
 
-	 bool isConnected();
-	 bool isFrameNew();
-	 bool hasAccelControl();
-
-	 void enableDepthNearValueWhite(bool val);
-	 bool isDepthNearValueWhite();
-
-	 void getMksAccel();
-	 void getDistanceAt(int x, int y);
-	 void getColorAt(int x, int y);
-	 void getWorldCoordinateAt(int x, int y);
-
-	 void getDepthPixels();
-
-	 void setLED();
-
 	 void update();
 
 	 void draw();
@@ -51,7 +35,7 @@ public:
 	 ///
 	 /// NOTE: currently, libfreenect returns a serial number with all 0s for
 	 /// kinect models > 1414, so this will only work with the original xbox kinect
-	 string getSerial() const;
+	 // string getSerial() const;
 
 	 void setSynchronizedImages(bool bUseSynchronizedImages = true);
 
@@ -87,7 +71,8 @@ private:
 
 	const int32_t TIMEOUT_IN_MS = 1000;
 	k4a_capture_t capture;
-	k4a_image_t image;
+	k4a_image_t colorImage;
+	k4a_image_t depthImage;
 
 	int height;
 	int width;

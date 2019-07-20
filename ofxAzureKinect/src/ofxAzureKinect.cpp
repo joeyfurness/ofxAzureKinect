@@ -13,7 +13,9 @@ ofxAzureKinect::ofxAzureKinect()
 	bUseSynchronizedImages = true;
 
 	capture = NULL;
-	image = NULL;
+	colorImage = NULL;
+	depthImage = NULL;
+
 }
 
 ofxAzureKinect::~ofxAzureKinect()
@@ -59,6 +61,8 @@ bool ofxAzureKinect::open(int deviceIndex)
 	width = calibration.color_camera_calibration.resolution_width;
 	height = calibration.color_camera_calibration.resolution_height;
 	ofLog(OF_LOG_NOTICE, "Color camera height: %d width: %d", height, width);
+
+	colorPixels.allocate(width, height, OF_PIXELS_BGRA);
 
 	// Start the camera with the given configuration
 	if (K4A_FAILED(k4a_device_start_cameras(device, &config)))
@@ -121,6 +125,13 @@ void ofxAzureKinect::update()
 	case K4A_WAIT_RESULT_FAILED:
 		ofLog(OF_LOG_WARNING, "Failed to read a capture");
 		break;
+	}
+
+	// Access the color image
+	colorImage = k4a_capture_get_color_image(capture);
+	if (colorImage != NULL)
+	{
+
 	}
 
 
