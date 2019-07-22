@@ -131,10 +131,19 @@ void ofxAzureKinect::update()
 	colorImage = k4a_capture_get_color_image(capture);
 	if (colorImage != NULL)
 	{
+		const auto colorBuffer = k4a_image_get_buffer(colorImage);
+		const auto colorSize = glm::ivec2(k4a_image_get_width_pixels(colorImage), k4a_image_get_height_pixels(colorImage));
 
+		colorPixels.setFromPixels(colorBuffer, colorSize.x, colorSize.y, OF_PIXELS_BGRA);
+		colorTexture.loadData(colorPixels);
 	}
 
 
 	// The capture must always be released when it is done being used
 	k4a_capture_release(capture);
+}
+
+void ofxAzureKinect::draw()
+{
+	colorTexture.draw(0, 0, 1920, 1080);
 }
