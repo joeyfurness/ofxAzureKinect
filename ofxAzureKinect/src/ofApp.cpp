@@ -13,7 +13,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+	kinect.draw();
 }
 
 void ofApp::exit(){
